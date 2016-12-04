@@ -38,7 +38,7 @@ au BufNewFile,BufRead *.pml set filetype=sml
 " Rust: (get racer.vim to know about rust-src)
 set hidden
 let g:racer_cmd="~/bin/racer"
-let $RUST_SRC_PATH="/home/darkstar/Code/utils/rust/src/"
+let $RUST_SRC_PATH="~/Code/utils/rust/src/"
 
 " Erlang: 
 let erlang_folding = 1
