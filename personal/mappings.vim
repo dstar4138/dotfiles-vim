@@ -23,6 +23,10 @@ map <Leader>t :TagbarToggle<CR>
 noremap <silent> <leader>mw :call MarkWindowForSwap()<CR>
 noremap <silent> <leader>pw :call DoMarkedSwap()<CR>
 
+" Press Space to turn off highlighting and clear any message already
+" displayed.
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
 " Because I fold a lot, here's nicer IMO folding using f-all, f-this.
 noremap fa zi 
 noremap ft za

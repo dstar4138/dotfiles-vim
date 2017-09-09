@@ -1,6 +1,6 @@
 "" Dean's Vim RC
-"" Version: 0.2
-"" Date:12/02/2016
+"" Version: 0.3
+"" Date:09/09/2017
 
 " VIM mode because we are civilized.
 set nocompatible
@@ -9,6 +9,7 @@ set nocompatible
 let mapleader = "'"
 
 " Everything is nicer in color
+set t_ut=
 set background=dark
 color industry
 syntax on

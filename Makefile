@@ -1,3 +1,5 @@
+.PHONY: bundle
+
 all: bundle install
 
 bundle:
