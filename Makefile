@@ -1,11 +1,18 @@
-.PHONY: bundle
+NEW_RCF="${PWD}/vimrc"
+NEW_CFG="${PWD}/vim"
 
-all: bundle install
+RCF_PATH="${HOME}/.vimrc"
+CFG_PATH="${HOME}/.vim"
 
-bundle:
-	-mkdir bundle
+.PHONY: install get-submodules check-if-safe 
+
+install: get-submodules check-if-safe
+	ln -s "${NEW_RCF}" "${RCF_PATH}"
+	ln -s "${NEW_CFG}" "${CFG_PATH}"
+
+get-submodules:
 	git submodule update --init --recursive
 
-install:
-	-mv ~/.vimrc ~/.vimrc_bk
-	ln vimrc ~/.vimrc
+check-if-safe:
+	@(test ! -e ${RCF_PATH} && test ! -h ${RCF_PATH}) || (echo "${RCF_PATH} exists already. Aborting." && error)
+	@(test ! -e ${CFG_PATH} && test ! -h ${CFG_PATH}) || (echo "${CFG_PATH} exists already. Aborting." && error)
